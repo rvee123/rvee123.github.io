@@ -71,4 +71,4 @@ function myCountdown(tid){
     }, 1000);
 }
 
-myCountdown(0+prompt('Countdown: {Seconds}'))
+myCountdown(1+(prompt('Countdown: {Seconds}')-1))
