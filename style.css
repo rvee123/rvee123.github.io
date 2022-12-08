@@ -16,17 +16,17 @@ body{
     align-items: center;
 
 }
-.mid{
+.screen{
     background-color: grey;
     flex-basis: 50%;
     text-align: center;
     height: inherit;
     border: white .5px solid;
     border-radius: 1rem;
-    margin-top: 10rem;
-}
-.mid h1{
-    font-size: 5rem;
+    margin-top: 35vh;
+    padding: 1rem;
+    font-size: 10rem;
     font-style: normal;
+    color: beige;
     -webkit-text-stroke: .5px white;
 }

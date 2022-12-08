@@ -256,7 +256,7 @@
 // }
 function myCountdown(tid){
     let countdown = tid
-
+    const screen = document.querySelector('.screen')
     let h = hours(countdown)
     let m = minutes(countdown)
     let s = seconds(countdown)
@@ -293,29 +293,28 @@ function myCountdown(tid){
         countdown--
         switch(true){
             case s < 10 && m < 10 && h < 10:
-                console.log(`0${h}:0${m}:0${s}`)
+                screen.innerText = `0${h}:0${m}:0${s}`
                 break
             case s < 10 && m < 10:
-                console.log(`${h}:0${m}:0${s}`)
+                screen.innerText = `${h}:0${m}:0${s}`
                 break
             case s < 10 && h < 10:
-                console.log(`0${h}:${m}:0${s}`)
+                screen.innerText = `0${h}:${m}:0${s}`
                 break
             case m < 10 && h < 10:
-                console.log(`0${h}:0${m}:${s}`)
+                screen.innerText = `0${h}:0${m}:${s}`
                 break
             case s < 10:
-                console.log(`${h}:${m}:0${s}`)
+                screen.innerText = `${h}:${m}:0${s}`
                 break
             case m < 10:
-                console.log(`${h}:0${m}:${s}`)
+                screen.innerText = `${h}:0${m}:${s}`
                 break
             case h < 10:
-                console.log(`0${h}:${m}:${s}`)
+                screen.innerText = `0${h}:${m}:${s}`
                 break
             default:
-                console.log(`${h}:${m}:${s}`)
-                return `${h}:${m}:${s}`
+                screen.innerText = `${h}:${m}:${s}`
         }
         switch(true){
             case m == 0:
@@ -327,6 +326,9 @@ function myCountdown(tid){
         }
     }, 1000);
 }
+
+myCountdown(prompt('Countdown: {Seconds}'))
+
 // setInterval(() => {
 //     console.log(`${h}:${m}:${s}`)
 //     countdown--
