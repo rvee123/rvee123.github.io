@@ -71,4 +71,8 @@ function myCountdown(tid){
     }, 1000);
 }
 
-myCountdown(1+(prompt('Countdown: {Seconds}')-1))
+let input = 0
+while(input = 0){
+    input = prompt('Countdown: {Seconds}')
+}
+myCountdown(input)
