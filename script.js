@@ -72,7 +72,7 @@ function myCountdown(tid){
 }
 
 let input = 0
-while(input = 0){
+while(input == 0){
     input = prompt('Countdown: {Seconds}')
 }
 myCountdown(input)
