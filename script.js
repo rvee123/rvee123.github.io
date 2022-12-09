@@ -1,10 +1,11 @@
+let input = 0
+const screen = document.querySelector('.screen')
+
 function myCountdown(tid){
-    let input = 0
     let countdown = tid
     let h = hours(countdown)
     let m = minutes(countdown)
     let s = seconds(countdown)
-    const screen = document.querySelector('.screen')
 
     function seconds(timer){
             switch(true){
