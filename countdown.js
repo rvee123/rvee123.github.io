@@ -33,7 +33,10 @@ function myCountdown(tid){
     }
 
     const myTimer = setInterval(() => {
-        if(countdown == 0){clearInterval(myTimer)}
+        if(countdown == 0){
+            clearInterval(myTimer)
+            active = false
+        }
         countdown--
         switch(true){
             case s < 10 && m < 10 && h < 10:
@@ -70,15 +73,3 @@ function myCountdown(tid){
         }
     }, 1000);
 }
-
-const form = document.querySelector(".screen_form")
-const input = document.querySelector(".screen_input")
-let active = false
-
-form.addEventListener('submit', (e) => {
-    if(active === false){
-        e.preventDefault()
-    }
-    active = true
-    myCountdown(input.value)
-})

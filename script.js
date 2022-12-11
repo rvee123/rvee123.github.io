@@ -1,3 +1,6 @@
+const form = document.querySelector(".screen_form")
+const input = document.querySelector(".screen_input")
+let active = false
 let nav = document.querySelector('.nav')
 let button = document.querySelector('.nav_button')
 let toggle = document.querySelector('.nav .arrow')
@@ -44,4 +47,12 @@ logo.addEventListener('click', () =>{
     });
 
     logo.classList.add('active')
+})
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    if(active === false){
+        myCountdown(input.value)
+        active = true
+    }
 })
