@@ -11,7 +11,7 @@
 <body>
         <div class="nav">
             <div class="logo">
-                <img class="image" src="/images/icon.png">
+                <img onclick="window.location.href='index.html'" class="image" src="/images/icon.png">
             </div>
             <img class="arrow" src="/images/arrow.png">
             <ul class="nav_buttons">
@@ -35,10 +35,12 @@
                     </button>
             </ul>
         </div>
-        <div class="content">
-                <div>
-                    <span id="scaleCenter" class="screen">00:00:00</span>
-                </div>
+        <div class="main">
+                    <span class="screen">00:00:00</span>
+                    <form class="screen_form" name="input" onsubmit="">
+                        <input class="screen_input" type="number" name="amount" placeholder="Seconds" min="0" required autofocus>
+                        <input class="screen_submit" type="submit" value="OK">
+                    </form>
         </div>
     <script src="countdown.js"></script>
     <script src="script.js"></script>

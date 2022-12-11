@@ -71,9 +71,14 @@ function myCountdown(tid){
     }, 1000);
 }
 
-let input
-while(true){
-    input = prompt('Countdown: {Seconds}')
-    break
-}
-myCountdown(input)
+const form = document.querySelector(".screen_form")
+const input = document.querySelector(".screen_input")
+let active = false
+
+form.addEventListener('submit', (e) => {
+    if(active === false){
+        e.preventDefault()
+    }
+    active = true
+    myCountdown(input.value)
+})
