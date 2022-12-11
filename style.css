@@ -1,32 +1,122 @@
-html {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-body{
-    background-color: rgb(60, 60, 60);
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-.main{
-    box-sizing: content-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: 0;
+    font-family: 'Roboto', sans-serif;
 }
-.screen{
+
+body{
+    display: flex;
+    min-height: 100vh;
+    /* background-image: url(/images/background.jpg); */
     background-color: grey;
-    flex-basis: 50%;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.nav{
+    min-height: 100vh;
+    width: 6rem;
+    /* width: 12rem; */
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 2px 0px 30px;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(8px);
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    transition: ease-in .1s;
+}
+
+.nav .arrow{
+    float: right;
+    margin-right: -25px;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(160,160,160);
+    border-radius: 2rem;
+    border: solid 2px rgba(255, 255, 255, 0.1);
+    transition: ease-out .1s;
+}
+
+.nav .logo{
+    display: none;
+}
+
+.nav .logo{
+    display: grid;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav .logo .image{
+    width: 75%;
+    margin-left: 12.5%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: solid 2px rgba(255, 255, 255, 0.1);
+    border-radius: 6rem;
+    margin-top: 1rem;
+}
+
+.nav .nav_buttons{
+    margin-top: 75px;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    height: inherit;
-    border: white .5px solid;
-    border-radius: 1rem;
-    margin-top: 35vh;
-    padding: 1rem;
-    font-size: 10rem;
-    font-style: normal;
-    color: beige;
-    -webkit-text-stroke: .5px white;
+}
+.nav .nav_button{
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 3rem;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: solid 2px rgba(255, 255, 255, 0.1);
+    margin: 1rem 0;
+}
+
+.nav .nav_button:hover{
+    box-shadow: 0px 0px 5px rgb(255, 0, 255);
+    cursor: pointer;
+}
+
+.nav .logo .image:hover{
+    box-shadow: 0px 0px 5px rgb(255, 0, 255);
+    cursor: pointer;
+}
+
+.nav .arrow:hover{
+    box-shadow: 0px 0px 5px rgb(255, 0, 255);
+    cursor: pointer;
+}
+
+.nav.toggle{
+    width: 12rem;
+    transition: ease-out .1s;
+}
+
+.nav .nav_button.toggle{
+    text-align: left;
+    width: 90%;
+    border-radius: 5px;
+}
+
+.nav .arrow.toggle{
+    rotate: 180deg;
+    transition: ease-in .1s;
+}
+
+.nav .nav_button.active{
+    background-color: rgba(255, 0, 255, 0.5);
+}
+
+.nav .image.active{
+    background-color: rgba(255, 0, 255, 0.5);
 }

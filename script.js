@@ -1,79 +1,47 @@
-let input = 0
-const screen = document.querySelector('.screen')
+let nav = document.querySelector('.nav')
+let button = document.querySelector('.nav_button')
+let toggle = document.querySelector('.nav .arrow')
+let buttonList = document.querySelectorAll('.nav .nav_button')
+let logo = document.querySelector('.nav .logo img')
 
-function myCountdown(tid){
-    let countdown = tid
-    let h = hours(countdown)
-    let m = minutes(countdown)
-    let s = seconds(countdown)
-
-    function seconds(timer){
-            switch(true){
-                case timer >= 60:
-                    return timer % 60
-                    break
-                default:
-                    return timer
-            }
+toggle.addEventListener('click', () =>{
+    if(nav.className === 'nav'){
+        nav.classList.add('toggle')
+        toggle.classList.add('toggle')
+        buttonList.forEach(button => {
+            buttonList.forEach(button => {
+                button.classList.add('toggle')
+            });
+        });
+    }else{
+        nav.classList.remove('toggle')
+        toggle.classList.remove('toggle')
+        buttonList.forEach(button => {
+            buttonList.forEach(button => {
+                button.classList.remove('toggle')
+            });
+        });
     }
+})
 
-    function minutes(timer){
-            switch(true){
-                case timer >= 3600:
-                    return (timer / 60) % 60
-                    break
-                default:
-                    return Math.floor(timer/60)
-            }
-    }
+buttonList.forEach(button => {
 
-    function hours(timer){
-            switch(true){
-                default:
-                    return Math.floor(timer/3600)
-            }
-    }
+    button.addEventListener('click', () => {
 
-    const myTimer = setInterval(() => {
-        if(countdown == 0){clearInterval(myTimer)}
-        countdown--
-        switch(true){
-            case s < 10 && m < 10 && h < 10:
-                screen.innerText = `0${h}:0${m}:0${s}`
-                break
-            case s < 10 && m < 10:
-                screen.innerText = `${h}:0${m}:0${s}`
-                break
-            case s < 10 && h < 10:
-                screen.innerText = `0${h}:${m}:0${s}`
-                break
-            case m < 10 && h < 10:
-                screen.innerText = `0${h}:0${m}:${s}`
-                break
-            case s < 10:
-                screen.innerText = `${h}:${m}:0${s}`
-                break
-            case m < 10:
-                screen.innerText = `${h}:0${m}:${s}`
-                break
-            case h < 10:
-                screen.innerText = `0${h}:${m}:${s}`
-                break
-            default:
-                screen.innerText = `${h}:${m}:${s}`
-        }
-        switch(true){
-            case m == 0:
-                h = hours(countdown)
-            case s == 0:
-                m = minutes(countdown)
-            default:
-                s = seconds(countdown)
-        }
-    }, 1000);
-}
+        buttonList.forEach(button => {
+            button.classList.remove('active');
+        });
 
-while(input == 0){
-    input = prompt('Countdown: {Seconds}')
-}
-myCountdown(input)
+        logo.classList.remove('active')
+        button.classList.add('active');
+
+    });
+});
+
+logo.addEventListener('click', () =>{
+    buttonList.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    logo.classList.add('active')
+})

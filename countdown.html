@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test</title>
     <link rel="stylesheet" href="/website/style.css">
+    <link rel="stylesheet" href="/website/cdStyle.css">
 </head>
 <body>
         <div class="nav">
             <div class="logo">
-                <img class="image active" src="/images/icon.png">
+                <img class="image" src="/images/icon.png">
             </div>
             <img class="arrow" src="/images/arrow.png">
             <ul class="nav_buttons">
-                    <button onclick="window.location.href='countdown.html'" class="nav_button">
+                    <button onclick="window.location.href='countdown.html'" class="nav_button active">
                         <span>&#9775;</span>
                     </button>
                     <button class="nav_button">
@@ -34,6 +35,12 @@
                     </button>
             </ul>
         </div>
+        <div class="content">
+                <div>
+                    <span id="scaleCenter" class="screen">00:00:00</span>
+                </div>
+        </div>
+    <script src="/website/countdown.js"></script>
     <script src="/website/script.js"></script>
 </body>
 </html>
