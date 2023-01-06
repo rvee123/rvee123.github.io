@@ -1,4 +1,4 @@
-.main{
+.main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -6,24 +6,24 @@
   width: 100%;
 }
 
-.main .screen{
+.main .screen {
   display: flex;
   align-self: flex-end;
   align-items: center;
   width: 6em;
   height: 2em;
-  background-color: rgba(255, 255, 255, 0.25);
-  border: rgba(255, 255, 255, 0.1) 2px solid;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: rgba(0, 0, 0, 0.5) 1px solid;
   border-radius: 10rem;
   font-size: 100px;
   font-style: normal;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: rgb(255, 0, 255);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  color: rgb(0, 255, 255);
   padding: 5vh 10vh;
 }
 
-.main .screen_form{
+.main .screen_form {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -35,32 +35,32 @@
   padding: 1em;
 }
 
-.main .screen_input{
+.main .screen_input {
   width: 50%;
   height: 2em;
   border-radius: 5px;
   padding: 10px;
-  transition: ease-out .25s;
+  transition: ease-out 0.25s;
 }
 
-.main .screen_submit{
+.main .screen_submit {
   width: 50%;
   height: 2em;
   border-radius: 5px;
   padding: 10px;
-  transition: ease-out .25s;
+  transition: ease-out 0.25s;
 }
 
-.main .screen_input:focus{
-  background-color: rgb(190, 255, 190);
-  transition: ease-in .25s;
+.main .screen_input:focus {
+  background-color: rgb(0, 255, 150);
+  transition: ease-in 0.25s;
 }
 
-.main .screen_submit:hover{
+.main .screen_submit:hover {
   box-shadow: 0px 0px 5px rgb(255, 0, 255);
   cursor: pointer;
 }
 
-.main .screen_submit:active{
+.main .screen_submit:active {
   background-color: rgba(255, 0, 255, 0.5);
 }

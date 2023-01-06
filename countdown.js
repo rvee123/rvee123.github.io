@@ -1,3 +1,15 @@
+const form = document.querySelector(".screen_form")
+const input = document.querySelector(".screen_input")
+let active = false
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    if(active === false){
+        myCountdown(input.value)
+        active = true
+    }
+})
+
 function myCountdown(tid){
     let countdown = tid
     let h = hours(countdown)
